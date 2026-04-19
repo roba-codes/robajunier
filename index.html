@@ -4,9 +4,275 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>robacodes in programming</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1>roba junier</h1>
+    <h1>Hi i am robel gisila i am front end developer more than 1year expirance</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        Vitae dolorem ipsa velit? <br> Exercitationem incidunt vero iusto 
+        alias. Quod veritatis cupiditate, repellendus sit, ullam sequi
+         soluta aliquam hic dolorum unde aperiam?</p>
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fancy Login</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    /* Background and Glassmorphism */
+    body,html {
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: linear-gradient(120deg, #6a82fb 0%, #fc5c7d 100%);
+      overflow: hidden;
+      position: relative;
+      transition: background 0.4s;
+    }
+    body.dark {
+      background: linear-gradient(120deg, #23242a 0%, #434343 100%);
+    }
+    .particles {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      top: 0; left: 0;
+      overflow: hidden;
+    }
+    .glass-card {
+      position:relative;
+      z-index:1;
+      margin: auto;
+      margin-top: 5vh;
+      width: 340px;
+      padding: 2.2rem 2.4rem 1.6rem 2.4rem;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.18);
+      box-shadow: 0 8px 48px rgba(0,0,0,0.19);
+      backdrop-filter: blur(21px) saturate(1.8);
+      -webkit-backdrop-filter: blur(21px) saturate(1.8);
+      border: 1.2px solid rgba(255,255,255,0.2);
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem;
+      transition: background 0.4s, color 0.4s;
+    }
+    body.dark .glass-card {
+      background: rgba(35, 36, 42, 0.74);
+      color: #ececec;
+      border: 1.2px solid rgba(125,125,125,0.21);
+    }
+    .login-title {
+      font-size: 2.1rem;
+      font-weight: bold;
+      text-align: center;
+      margin: 0 0 2rem 0;
+      letter-spacing: 1.1px;
+      color: #333;
+      text-shadow: 0 2px 18px #fff8, 0 1px 0 #fff4;
+      transition: color 0.4s;
+    }
+    body.dark .login-title { color: #ececec; text-shadow: none;}
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.45rem;
+    }
+    .input-field {
+      position: relative;
+      width: 100%;
+    }
+    .input-field input {
+      width: 100%;
+      padding: 1.08rem 1rem 1.08rem 2.7rem;
+      border: 1.7px solid #aeaeae;
+      border-radius: 9px;
+      background: rgba(255,255,255,0.47);
+      font-size: 1.07rem;
+      font-weight: 500;
+      color: #23242a;
+      transition: border-color 0.19s, background 0.19s, color 0.4s;
+    }
+    .input-field input:focus {
+      border-color: #6a82fb;
+      outline: none;
+      background: rgba(255,255,255,0.66);
+    }
+    body.dark .input-field input {
+        background: rgba(80,80,90,0.18);
+        color: #ececec;
+        border: 1.7px solid #444a;
+    }
+    .input-field label {
+      position: absolute;
+      left: 2.7rem;
+      top: 1.08rem;
+      pointer-events: none;
+      font-size: 1.07rem;
+      color: #868686;
+      background: transparent;
+      transition: 0.21s cubic-bezier(.4,0,.2,1);
+      font-weight: 500;
+    }
+    .input-field input:focus + label,
+    .input-field input:not(:placeholder-shown) + label {
+      top: -0.83rem;
+      left: 2.2rem;
+      font-size: 0.91rem;
+      padding: 0 0.22em;
+      background: #fff;
+      color: #6a82fb;
+      border-radius: 3px;
+      font-weight: 700;
+    }
+    body.dark .input-field input:focus + label,
+    body.dark .input-field input:not(:placeholder-shown) + label {
+      background: #23242a;
+      color: #43e97b;
+    }
+    .input-field .icon {
+      position: absolute;
+      top: 50%;
+      left: 0.9rem;
+      transform: translateY(-50%);
+      font-size: 1.22rem;
+      color: #6a82fb;
+      opacity: 0.96;
+      transition: color 0.4s;
+    }
+    body.dark .input-field .icon { color: #43e97b;}
+    .login-form button {
+      border: none;
+      padding: 1rem 0;
+      border-radius: 8px;
+      font-size: 1.11rem;
+      font-weight: 700;
+      color: #fff;
+      background: linear-gradient(90deg,#6a82fb 22%, #fc5c7d 97%);
+      cursor: pointer;
+      box-shadow: 0 4px 18px rgba(106,130,251,0.11);
+      letter-spacing: 1.2px;
+      margin-top: 0.21rem;
+      transition: background 0.24s, color 0.34s;
+    }
+    .login-form button:hover { background: linear-gradient(90deg,#38f9d7 2%, #43e97b 100%); color: #23242a;}
+    .signup-link {
+      text-align: center;
+      color: #596585;
+      font-size: 1.01rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.2rem;
+    }
+    .signup-link a {
+      color: #6a82fb;
+      text-decoration: none;
+      font-weight: 700;
+      margin-left: 0.28em;
+      transition: text-decoration 0.13s;
+    }
+    .signup-link a:hover { text-decoration: underline; color: #43e97b;}
+    body.dark .signup-link, body.dark .signup-link a { color: #43e97b;}
+    .dark-toggle-btn {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.69rem;
+      margin-top: -1.8rem;
+      margin-bottom: 0.25rem;
+      font-size: 1rem;
+      color: #6a82fb;
+      cursor: pointer;
+      user-select: none;
+      letter-spacing: 1px;
+      z-index:99;
+      transition: color 0.4s;
+    }
+    body.dark .dark-toggle-btn { color: #43e97b;}
+    .dark-toggle-btn .material-icons {
+      font-size: 1.55rem;
+      margin-top: -0.1em;
+    }
+    .error-msg {
+      background: #fc5c7d22;
+      color: #c52c41;
+      border: 1.2px solid #fc5c7dd8;
+      border-radius: 6px;
+      font-size: 0.98rem;
+      margin: 0.5rem 0 0.15rem 0;
+      padding: 0.8em 1em 0.8em 2.3em;
+      position: relative;
+      animation: shake 0.19s 2;
+      box-shadow: 0 1px 3px #fc5c7d22;
+    }
+    .error-msg .material-icons {
+      font-size: 1.2rem;
+      position: absolute;
+      left: 0.8em;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @keyframes shake {
+      0%, 100% {transform: translateX(0);}
+      20%, 60% {transform: translateX(-6px);}
+      40%, 80% {transform: translateX(7px);}
+    }
+    @media (max-width: 430px) {
+      .glass-card { width: 98vw; padding: 1rem 0.1rem;}
+    }
+  </style>
+</head>
+<body>
+  <canvas class="particles" id="particles"></canvas>
+  <div class="glass-card">
+    <div class="dark-toggle-btn" id="toggleDark">
+      <span class="material-icons" id="darkIcon">dark_mode</span> <span id="darkLabel">Dark mode</span>
+    </div>
+    <h2 class="login-title">Fancy Login</h2>
+    <div id="errorMsg" style="display:none;"></div>
+    <form class="login-form" id="loginForm" autocomplete="off">
+      <div class="input-field">
+        <span class="material-icons icon">person</span>
+        <input type="text" id="username" name="username" required placeholder=" " autocomplete="username">
+        <label for="username">Username</label>
+      </div>
+      <div class="input-field">
+        <span class="material-icons icon">lock</span>
+        <input type="password" id="password" name="password" required placeholder=" " autocomplete="current-password">
+        <label for="password">Password</label>
+      </div>
+      <button type="submit">Log In</button>
+    </form>
+    <div class="signup-link">
+      No account? <a href="#">Sign up</a>
+    </div>
+  </div>
+  <script>
+    // 1. Dark mode toggle
+    const darkBtn = document.getElementById('toggleDark');
+    const darkLabel = document.getElementById('darkLabel');
+    const darkIcon = document.getElementById('darkIcon');
+    darkBtn.onclick = () => {
+      document.body.classList.toggle('dark');
+      const dark = document.body.classList.contains('dark');
+      darkLabel.textContent = dark ? 'Light mode' : 'Dark mode';
+      darkIcon.textContent = dark ? 'light_mode' : 'dark_mode';
+    };
+
+    // 2. Error message demo on submit
+    document.getElementById("loginForm").onsubmit = (e) => {
+      e.preventDefault();
+      const userVal = document.getElementById('username').value.trim();
+      const passVal = document.getElementById('password').value.trim();
+      if(!userVal || !passVal) return; // Required already
+      // Example: Username "user", password "pass"
+      if(!(userVal === "user" &&*
+
     
 </body>
 </html>
